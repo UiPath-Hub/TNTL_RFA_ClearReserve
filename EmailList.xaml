@@ -1,0 +1,250 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="EmailList" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="976,3652" sap2010:WorkflowViewState.IdRef="EmailList_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="526,3487" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strEmailFrom" />
+      <Variable x:TypeArguments="x:String" Name="strEmailPort" />
+      <Variable x:TypeArguments="x:String" Name="strEmailServer" />
+      <Variable x:TypeArguments="x:Int32" Name="intEmailPort" />
+      <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="ListFileAttach" />
+      <Variable x:TypeArguments="x:String" Default="RFA : Success in uploading JV Clear reserve account " Name="SubjectMail" />
+      <Variable x:TypeArguments="x:String" Default="Best Regards,  &#xA;RPA Administrator" Name="ClosingMail" />
+      <Variable x:TypeArguments="x:String" Default="Dear Costing &amp; Spare part Team,  &#xA;   Subject:  RFA : Success In uploading JV Create reserve account &#xA;   &#xA;   RPA Upload_JV success, Please Review Attach File &#xA;   &#xA;   " Name="BodyMailOne" />
+      <Variable x:TypeArguments="x:String" Default="Date/time  " Name="BodyMailTwo" />
+      <Variable x:TypeArguments="x:String" Name="DateStampFile" />
+      <Variable x:TypeArguments="x:String" Name="EmailListReserve" />
+      <Variable x:TypeArguments="x:String" Default="EmailListReserve" Name="AssetEmailListReserve" />
+      <Variable x:TypeArguments="x:String" Name="ListFile" />
+      <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\AllFileClearReserveFinishProcess\" Name="PathFileFinish" />
+      <Variable x:TypeArguments="s:String[]" Name="ListFileAttachRMSuccess" />
+      <Variable x:TypeArguments="s:String[]" Name="ListAllFile" />
+      <Variable x:TypeArguments="s:String[]" Name="ListFileTypeFailedAttach" />
+      <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\AllFileClearReserveFinishProcess\Failed\" Name="PathFileTypeFailed" />
+      <Variable x:TypeArguments="x:String" Default="RFA : Failed!!! in uploading JV Clear reserve account" Name="SubjectMailFileFailed" />
+      <Variable x:TypeArguments="x:String" Default="Dear Costing &amp; Spare part Team,  &#xA;  &#xA;   RPA Upload_JV failed, Please Review Attach File &#xA;   &#xA;   " Name="BodyFileFailedMailOne" />
+      <Variable x:TypeArguments="x:String" Default="Date/time  " Name="BodyFileFailedMailTwo" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetEmailListReserve]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[EmailListReserve]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_FROM" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[strEmailFrom]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_PORT" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[strEmailPort]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_SERVER" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[strEmailServer]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[intEmailPort]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[Cint(strEmailPort)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;EmailReserve &quot;+EmailListReserve]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[strEmailFrom]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[strEmailPort]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[strEmailServer]" />
+    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[DateStampFile]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[DateAndTime.Now.ToString("dd/MM/yyyy hh:mm:ss").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[BodyMailTwo]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[BodyMailTwo+DateStampFile+vbCrLf]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:IEnumerable(x:String)">[ListFileAttach]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(PathFileFinish)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[ListAllFile]</OutArgument>
+            </Assign.To>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <If Condition="[Directory.GetFiles(PathFileFinish).Length = 0]" sap:VirtualizedContainerService.HintSize="484,303" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Else>
+        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" Email="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" AttachmentsCollection="[ListFileAttach]" Body="[BodyMailOne+BodyMailTwo+ClosingMail]" DisplayName="Send SMTP Mail Message" EnableSSL="True" From="[strEmailFrom]" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="[intEmailPort]" SecureConnection="None" Server="[strEmailServer]" Subject="[SubjectMail]" To="Supakorn.s@baraadv.co.th">
+          <ui:SendMail.Files>
+            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+          </ui:SendMail.Files>
+        </ui:SendMail>
+      </If.Else>
+    </If>
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="484,383" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListFileAttach]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="file_move" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="426,249" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\AllFileClearReserveFinishProcess\Success\" Name="PathFileSendSuccess" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PathFileSendSuccess+Path.GetFilename(file_move.ToString).ToString]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[file_move.ToString]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[DateStampFile]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[DateAndTime.Now.ToString("dd/MM/yyyy hh:mm:ss").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[BodyMailTwo]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[BodyMailTwo+DateStampFile+vbCrLf]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[ListFileTypeFailedAttach]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(PathFileTypeFailed)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[Directory.GetFiles(PathFileTypeFailed).Length = 0]" DisplayName="SendEmailReserveFailed" sap:VirtualizedContainerService.HintSize="484,303" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Else>
+        <ui:SendMail Bcc="{x:Null}" Email="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" AttachmentsCollection="[ListFileTypeFailedAttach]" Body="[BodyFileFailedMailOne+BodyFileFailedMailTwo+ClosingMail]" Cc="Supakorn.s@baraadv.co.th" DisplayName="Send SMTP Mail Message" EnableSSL="True" From="[strEmailFrom]" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Port="[intEmailPort]" SecureConnection="None" Server="[strEmailServer]" Subject="[SubjectMailFileFailed]" To="[EmailListReserve]">
+          <ui:SendMail.Files>
+            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+          </ui:SendMail.Files>
+        </ui:SendMail>
+      </If.Else>
+    </If>
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="484,383" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ListFileTypeFailedAttach]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="file_move" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="426,249" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\AllFileCreateReserveFinishProcess\Success\" Name="PathFileSendSuccess" />
+              <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\AllFileClearReserveFinishProcess\Failed\SendSubmitted\" Name="PathTypeFileFailedSendSuccess" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PathTypeFileFailedSendSuccess+Path.GetFilename(file_move.ToString).ToString]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[file_move.ToString]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+  </Sequence>
+</Activity>

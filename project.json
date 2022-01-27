@@ -1,0 +1,61 @@
+{
+  "name": "Process Clear reserve JV",
+  "description": "",
+  "main": "ClearReserve.xaml",
+  "dependencies": {
+    "CopyFromUiPath.Word.Activities": "[1.5.3]",
+    "UiPath.Database.Activities": "[1.4.0]",
+    "UiPath.Excel.Activities": "[2.10.4]",
+    "UiPath.Mail.Activities": "[1.10.5]",
+    "UiPath.System.Activities": "[21.4.1]",
+    "UiPath.UIAutomation.Activities": "[21.4.4]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "21.4.4.0",
+  "projectVersion": "1.0.8",
+  "runtimeOptions": {
+    "exceptionHandlerWorkflow": "GlobalHandler.xaml",
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "ClearReserve.xaml",
+      "uniqueId": "825a15ac-c0e8-4f85-a07f-bbc24b7ff90d",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}

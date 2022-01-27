@@ -1,0 +1,176 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="UPDATESTATEOLD" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="759,753" sap2010:WorkflowViewState.IdRef="UPDATESTATEOLD_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="478,588" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,496" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="326,418" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="UPDATESTATEOLD" sap:VirtualizedContainerService.HintSize="284,326" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="UPDATESTATMain" sap:VirtualizedContainerService.HintSize="242,234" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Default="Server=tdwk2db01;Database=RFA;User Id=rfa_app_user;Password=rfa@27072021;" Name="StrConSQL" />
+                <Variable x:TypeArguments="ui:DatabaseConnection" Name="OutputConSQL" />
+                <Variable x:TypeArguments="x:String" Default="RPASystem" Name="UpdateSQLModifyBy" />
+                <Variable x:TypeArguments="sd:DataTable" Name="ResultUpdateState" />
+                <Variable x:TypeArguments="x:String" Default="S" Name="StatusReserveSuccess" />
+                <Variable x:TypeArguments="x:String" Default="D" Name="StatusReserveFailed" />
+                <Variable x:TypeArguments="x:String" Default="E" Name="StatusReserveError" />
+                <Variable x:TypeArguments="x:String" Default="JVO" Name="TypeOfReserveJVO" />
+                <Variable x:TypeArguments="x:String" Default="ERR" Name="TypeOfReserveFail" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:DatabaseConnect DatabaseConnection="[OutputConSQL]" DisplayName="Connect DB" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="[StrConSQL]" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="1176,143" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[argStatusReserve = StatusReserveSuccess]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ResultUpdateState]" DisplayName="Update Doc Running" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" ProviderName="System.Data.SqlClient" Sql="[&quot;UPDATE [dbo].[ReserveData] Set StatusReserve = '&quot;+StatusReserveSuccess+&quot;', ModifyDateTime = '&quot;+System.DateTime.Now.ToString(&quot;yyyy-MM-dd hh:mm:ss tt&quot;)+&quot;',ModifyBy = '&quot;+UpdateSQLModifyBy+&quot;',TypeOfReserve = '&quot;+TypeOfReserveJVO+&quot;' WHERE ReserveNo = '&quot;+argDoNoRFA+&quot;'&quot;]" ConnectionString="[StrConSQL]">
+                          <ui:ExecuteQuery.Parameters>
+                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                          </ui:ExecuteQuery.Parameters>
+                        </ui:ExecuteQuery>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="755,340" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[argStatusReserve = StatusReserveError]" sap:VirtualizedContainerService.HintSize="713,248" sap2010:WorkflowViewState.IdRef="If_1">
+                            <If.Then>
+                              <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ResultUpdateState]" DisplayName="Update Doc Running" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" ProviderName="System.Data.SqlClient" Sql="[&quot;UPDATE [dbo].[ReserveData] Set ModifyDateTime = '&quot;+System.DateTime.Now.ToString(&quot;yyyy-MM-dd hh:mm:ss tt&quot;)+&quot;',ModifyBy = '&quot;+UpdateSQLModifyBy+&quot;',StatusReserve = '&quot;+StatusReserveError+&quot;' WHERE ReserveNo = '&quot;+argDoNoRFA+&quot;'&quot;]" ConnectionString="[StrConSQL]">
+                                <ui:ExecuteQuery.Parameters>
+                                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                </ui:ExecuteQuery.Parameters>
+                              </ui:ExecuteQuery>
+                            </If.Then>
+                            <If.Else>
+                              <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ResultUpdateState]" DisplayName="Update Doc Running" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3" ProviderName="System.Data.SqlClient" Sql="[&quot;UPDATE [dbo].[ReserveData] Set ModifyDateTime = '&quot;+System.DateTime.Now.ToString(&quot;yyyy-MM-dd hh:mm:ss tt&quot;)+&quot;',ModifyBy = '&quot;+UpdateSQLModifyBy+&quot;',StatusReserve = '&quot;+StatusReserveFailed+&quot;' WHERE ReserveNo = '&quot;+argDoNoRFA+&quot;'&quot;]" ConnectionString="[StrConSQL]">
+                                <ui:ExecuteQuery.Parameters>
+                                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                </ui:ExecuteQuery.Parameters>
+                              </ui:ExecuteQuery>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+            </Sequence>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>
